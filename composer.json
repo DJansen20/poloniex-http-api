@@ -1,0 +1,33 @@
+{
+    "name": "djansen20/poloniex-http-api",
+    "description": "Package for the client implementation of the poloniex HTTP API",
+    "type": "library",
+    "keywords": [
+        "poloniex",
+        "api"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Danny Jansen",
+            "email": "danny.jansen93@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Poloniex\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Poloniex\\Tests\\": "tests/"
+        }
+    }
+}
