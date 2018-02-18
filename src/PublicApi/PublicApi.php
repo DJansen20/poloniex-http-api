@@ -16,6 +16,7 @@ use Poloniex\PublicApi\Requests\CurrenciesRequest;
 use Poloniex\PublicApi\Requests\LoanOrderRequest;
 use Poloniex\PublicApi\Requests\OrderbookRequest;
 use Poloniex\PublicApi\Requests\TickerRequest;
+use Poloniex\PublicApi\Requests\TradeHistoryRequest;
 use Poloniex\PublicApi\Requests\VolumeRequest;
 
 use Poloniex\PublicApi\Responses\ChartDataResponse;
@@ -23,6 +24,7 @@ use Poloniex\PublicApi\Responses\CurrenciesResponse;
 use Poloniex\PublicApi\Responses\LoanOrderResponse;
 use Poloniex\PublicApi\Responses\OrderbookResponse;
 use Poloniex\PublicApi\Responses\TickerResponse;
+use Poloniex\PublicApi\Responses\TradeHistoryResponse;
 use Poloniex\PublicApi\Responses\VolumeResponse;
 
 class PublicApi
@@ -79,6 +81,22 @@ class PublicApi
         $this->request = new OrderbookRequest($pair, $depth);
         $json = $this->sendRequest();
         $this->response = new OrderbookResponse($json);
+
+        return $this->response;
+    }
+
+    /**
+     * @param string $pair
+     * @param int|null $start
+     * @param int|null $end
+     * @return Response|TradeHistoryResponse
+     * @throws \Exception
+     */
+    public function getTradeHistory(string $pair, int $start = null, int $end = null)
+    {
+        $this->request = new TradeHistoryRequest($pair, $start, $end);
+        $json = $this->sendRequest();
+        $this->response = new TradeHistoryResponse($json);
 
         return $this->response;
     }
