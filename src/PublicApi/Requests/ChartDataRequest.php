@@ -11,12 +11,24 @@ use Poloniex\Common\Request;
 
 class ChartDataRequest extends Request
 {
+    /**
+     * @var string
+     */
     private $currencyPair;
 
+    /**
+     * @var int
+     */
     private $start;
 
+    /**
+     * @var int
+     */
     private $end;
 
+    /**
+     * @var int
+     */
     private $period;
 
     /**
@@ -99,6 +111,9 @@ class ChartDataRequest extends Request
         $this->period = $period;
     }
 
+    /**
+     * @return string
+     */
     public function withUri(): string
     {
         return sprintf('?command=%s&currencyPair=%s&start=%d&end=%d&period=%d',
