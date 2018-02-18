@@ -23,6 +23,11 @@ abstract class Request
      */
     protected $endpoint;
 
+    public function __construct()
+    {
+        $this->setEndpoint();
+    }
+
     /**
      * @return mixed
      */
