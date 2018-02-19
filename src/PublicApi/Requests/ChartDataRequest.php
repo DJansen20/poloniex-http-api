@@ -118,6 +118,7 @@ class ChartDataRequest extends Request
     {
         return sprintf('?command=%s&currencyPair=%s&start=%d&end=%d&period=%d',
             $this->getController(),
+            $this->getCurrencyPair(),
             $this->getStart(),
             $this->getEnd(),
             $this->getPeriod()

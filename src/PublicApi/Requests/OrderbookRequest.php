@@ -17,7 +17,7 @@ class OrderbookRequest extends Request
     private $currencyPair;
 
     /**
-     * @var string
+     * @var int
      */
     private $depth;
 
@@ -35,9 +35,9 @@ class OrderbookRequest extends Request
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getCurrencyPair(): int
+    public function getCurrencyPair(): string
     {
         return $this->currencyPair;
     }
@@ -71,7 +71,7 @@ class OrderbookRequest extends Request
      */
     public function withUri(): string
     {
-        return sprintf('?command=%s&currencyPair=%s%depth=%d',
+        return sprintf('?command=%s&currencyPair=%s&depth=%d',
             $this->getController(),
             $this->getCurrencyPair(),
             $this->getDepth()

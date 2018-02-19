@@ -30,17 +30,19 @@ class LoanOrderRequest extends Request
     /**
      * @return mixed
      */
-    public function getCurrency()
+    public function getCurrency(): string
     {
         return $this->currency;
     }
 
     /**
      * @param mixed $currency
+     * @return LoanOrderRequest
      */
-    public function setCurrency($currency): void
+    public function setCurrency($currency): LoanOrderRequest
     {
         $this->currency = $currency;
+        return $this;
     }
 
     /**
@@ -48,6 +50,6 @@ class LoanOrderRequest extends Request
      */
     public function withUri(): string
     {
-        return sprintf('?command=%d&currency=&s', $this->getController(), $this->getCurrency());
+        return sprintf('?command=%s&currency=%s', $this->getController(), $this->getCurrency());
     }
 }

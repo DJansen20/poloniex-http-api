@@ -100,7 +100,8 @@ class TradeHistoryRequest extends Request
      */
     public function withUri(): string
     {
-        return sprintf('?command=%s&currencyPair=%s&start=%d&end=%d', $this->getController(), $this->getStart(),
+        return sprintf('?command=%s&currencyPair=%s&start=%d&end=%d', $this->getController(), $this->getCurrencyPair(),
+            $this->getStart(),
             $this->getEnd());
     }
 }

@@ -25,6 +25,6 @@ class CurrenciesRequest extends Request
      */
     public function withUri(): string
     {
-        return sprintf('?command=%d', $this->getController());
+        return sprintf('?command=%s', $this->getController());
     }
 }
