@@ -41,6 +41,7 @@ class ChartDataRequest extends Request
     public function __construct(string $currencyPair, int $start, int $end, int $period)
     {
         $this->setController('returnChartData');
+        $this->setCurrencyPair($currencyPair);
         $this->setStart($start);
         $this->setEnd($end);
         $this->setPeriod($period);
