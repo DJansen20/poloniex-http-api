@@ -46,7 +46,7 @@ class TradeHistoryRequestTest extends TestCase
     public function testSetGetCurrencyPair(TradeHistoryRequest $request): void
     {
         $request->setCurrencyPair(CurrencyPair::BTC_BCH);
-        $this->assertEquals('btc_bch', $request->getCurrencyPair());
+        $this->assertEquals('BTC_BCH', $request->getCurrencyPair());
     }
 
     /**
@@ -80,7 +80,7 @@ class TradeHistoryRequestTest extends TestCase
      */
     public function testWithUri(TradeHistoryRequest $request): void
     {
-        $this->assertEquals('?command=testValue&currencyPair=btc_bch&start=22222222&end=33333333',
+        $this->assertEquals('?command=testValue&currencyPair=BTC_BCH&start=22222222&end=33333333',
             $request->withUri());
     }
 }

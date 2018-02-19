@@ -46,7 +46,7 @@ class ChartDataRequestTest extends TestCase
     public function testSetGetCurrencyPair(ChartDataRequest $request): void
     {
         $request->setCurrencyPair(CurrencyPair::ETH_BCH);
-        $this->assertEquals('eth_bch', $request->getCurrencyPair());
+        $this->assertEquals('ETH_BCH', $request->getCurrencyPair());
     }
 
     /**
@@ -92,7 +92,7 @@ class ChartDataRequestTest extends TestCase
      */
     public function testWithUri(ChartDataRequest $request): void
     {
-        $this->assertEquals('?command=testValue&currencyPair=eth_bch&start=11111111&end=22222222&period=14400',
+        $this->assertEquals('?command=testValue&currencyPair=ETH_BCH&start=11111111&end=22222222&period=14400',
             $request->withUri());
     }
 }

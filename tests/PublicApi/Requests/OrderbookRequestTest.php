@@ -46,7 +46,7 @@ class OrderbookRequestTest extends TestCase
     public function testSetGetCurrencyPair(OrderbookRequest $request): void
     {
         $request->setCurrencyPair(CurrencyPair::XMR_BLK);
-        $this->assertEquals('xmr_blk', $request->getCurrencyPair());
+        $this->assertEquals('XMR_BLK', $request->getCurrencyPair());
     }
 
     /**
@@ -68,6 +68,6 @@ class OrderbookRequestTest extends TestCase
      */
     public function testWithUri(OrderbookRequest $request): void
     {
-        $this->assertEquals('?command=returnTest&currencyPair=xmr_blk&depth=7', $request->withUri());
+        $this->assertEquals('?command=returnTest&currencyPair=XMR_BLK&depth=7', $request->withUri());
     }
 }
