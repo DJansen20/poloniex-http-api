@@ -22,8 +22,8 @@ class TradeHistoryResponse extends Response
      */
     public function __construct(string $json)
     {
-        $data = json_decode($json, true);
-        $this->setTradeHistory($data);
+        parent::__construct($json);
+        $this->tradeHistory = $this->data;
     }
 
     /**
@@ -32,15 +32,5 @@ class TradeHistoryResponse extends Response
     public function getTradeHistory(): array
     {
         return $this->tradeHistory;
-    }
-
-    /**
-     * @param array $tradeHistory
-     * @return TradeHistoryResponse
-     */
-    public function setTradeHistory(array $tradeHistory): TradeHistoryResponse
-    {
-        $this->tradeHistory = $tradeHistory;
-        return $this;
     }
 }

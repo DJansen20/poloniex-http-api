@@ -92,7 +92,7 @@ class PublicApi
      * @return Response|TradeHistoryResponse
      * @throws \Exception
      */
-    public function getTradeHistory(string $pair, int $start = null, int $end = null)
+    public function getTradeHistory(string $pair, int $start = 99999995000, int $end = 9999999999)
     {
         $this->request = new TradeHistoryRequest($pair, $start, $end);
         $json = $this->sendRequest();

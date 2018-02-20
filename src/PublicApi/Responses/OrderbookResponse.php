@@ -37,11 +37,11 @@ class OrderbookResponse extends Response
      */
     public function __construct(string $json)
     {
-        $data = json_decode($json, true);
-        $this->setAsks($data['asks'])
-            ->setBids($data['bids'])
-            ->setIsFrozen($data['isFrozen'])
-            ->setSeq($data['seq']);
+        parent::__construct($json);
+        $this->asks = $this->data['asks'];
+        $this->bids = $this->data['bids'];
+        $this->isFrozen = $this->data['isFrozen'];
+        $this->seq = $this->data['seq'];
     }
 
     /**
@@ -53,31 +53,11 @@ class OrderbookResponse extends Response
     }
 
     /**
-     * @param array $asks
-     * @return OrderbookResponse
-     */
-    public function setAsks(array $asks): OrderbookResponse
-    {
-        $this->asks = $asks;
-        return $this;
-    }
-
-    /**
      * @return array
      */
     public function getBids(): array
     {
         return $this->bids;
-    }
-
-    /**
-     * @param array $bids
-     * @return OrderbookResponse
-     */
-    public function setBids(array $bids): OrderbookResponse
-    {
-        $this->bids = $bids;
-        return $this;
     }
 
     /**
@@ -89,30 +69,10 @@ class OrderbookResponse extends Response
     }
 
     /**
-     * @param bool $isFrozen
-     * @return OrderbookResponse
-     */
-    public function setIsFrozen(bool $isFrozen): OrderbookResponse
-    {
-        $this->isFrozen = $isFrozen;
-        return $this;
-    }
-
-    /**
      * @return int
      */
     public function getSeq(): int
     {
         return $this->seq;
-    }
-
-    /**
-     * @param int $seq
-     * @return OrderbookResponse
-     */
-    public function setSeq(int $seq): OrderbookResponse
-    {
-        $this->seq = $seq;
-        return $this;
     }
 }

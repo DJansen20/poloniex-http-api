@@ -22,25 +22,15 @@ class ChartDataResponse extends Response
      */
     public function __construct(string $json)
     {
-        $data = json_decode($json, true);
-        $this->setChartData($data);
+        parent::__construct($json);
+        $this->chartData = $this->data;
     }
 
     /**
-     * @return mixed
+     * @return array
      */
     public function getChartData(): array
     {
         return $this->chartData;
-    }
-
-    /**
-     * @param mixed $chartData
-     * @return ChartDataResponse
-     */
-    public function setChartData(array $chartData): ChartDataResponse
-    {
-        $this->chartData = $chartData;
-        return $this;
     }
 }

@@ -21,8 +21,8 @@ class VolumeResponse extends Response
      * @param string $json
      */
     public function __construct(string $json) {
-        $data = json_decode($json, true);
-        $this->setCurrencyPairs($data);
+        parent::__construct($json);
+        $this->currencyPairs = $this->data;
     }
 
     /**
@@ -31,15 +31,5 @@ class VolumeResponse extends Response
     public function getCurrencyPairs(): array
     {
         return $this->currencyPairs;
-    }
-
-    /**
-     * @param array $currencyPairs
-     * @return VolumeResponse
-     */
-    public function setCurrencyPairs(array $currencyPairs): VolumeResponse
-    {
-        $this->currencyPairs = $currencyPairs;
-        return $this;
     }
 }

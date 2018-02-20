@@ -27,9 +27,9 @@ class LoanOrderResponse extends Response
      */
     public function __construct(string $json)
     {
-        $data = json_decode($json, true);
-        $this->setOffers($data['offers'])
-            ->setDemands($data['demands']);
+        parent::__construct($json);
+        $this->offers = $this->data['offers'];
+        $this->demands = $this->data['demands'];
     }
 
     /**
@@ -41,30 +41,10 @@ class LoanOrderResponse extends Response
     }
 
     /**
-     * @param array $offers
-     * @return LoanOrderResponse
-     */
-    public function setOffers(array $offers): LoanOrderResponse
-    {
-        $this->offers = $offers;
-        return $this;
-    }
-
-    /**
      * @return array
      */
     public function getDemands(): array
     {
         return $this->demands;
-    }
-
-    /**
-     * @param array $demands
-     * @return LoanOrderResponse
-     */
-    public function setDemands(array $demands): LoanOrderResponse
-    {
-        $this->demands = $demands;
-        return $this;
     }
 }

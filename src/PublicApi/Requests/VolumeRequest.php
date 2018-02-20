@@ -16,7 +16,7 @@ class VolumeRequest extends Request
      */
     public function __construct()
     {
-        $this->setController('return24Volume');
+        $this->setController('return24hVolume');
         parent::__construct();
     }
 
