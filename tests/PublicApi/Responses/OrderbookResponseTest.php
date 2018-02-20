@@ -38,10 +38,6 @@ class OrderbookResponseTest extends TestCase
 
     /**
      * @covers \Poloniex\PublicApi\Responses\OrderbookResponse::__construct
-     * @covers \Poloniex\PublicApi\Responses\OrderbookResponse::setAsks
-     * @covers \Poloniex\PublicApi\Responses\OrderbookResponse::setBids
-     * @covers \Poloniex\PublicApi\Responses\OrderbookResponse::setIsFrozen
-     * @covers \Poloniex\PublicApi\Responses\OrderbookResponse::setSeq
      * @return OrderbookResponse
      */
     public function testCanBeConstructed(): OrderbookResponse

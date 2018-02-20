@@ -7,21 +7,32 @@
 
 namespace Poloniex\Tests\Common;
 
-use Poloniex\Common\Response;
 use PHPUnit\Framework\TestCase;
 
 class ResponseTest extends TestCase
 {
+    const TEST = [
+        'test' => [
+            'blaat'
+        ],
+        'test2' => [
+            'blaat2'
+        ]
+    ];
     /**
      * @covers \Poloniex\Common\Response
+     * @covers \Poloniex\Common\Response::jsonSerialize
+     * @covers \Poloniex\Common\Response::asArray
      *
-     * @return Response
-     * @throws \Exception
+     * @return void
+     * @throws \ReflectionException
      */
     public function testCanBeConstructed()
     {
-        $response = new class extends Response{};
-        $this->assertInstanceOf('Poloniex\\Common\\Response', $response);
-        return $response;
+        $stub = $this->createMock('\\Poloniex\\Common\\Response');
+        $stub->method('asArray')->willReturn(self::TEST);
+        $stub->method('jsonSerialize')->willReturn(json_encode(self::TEST));
+        $this->assertEquals(self::TEST, $stub->asArray());
+        $this->assertEquals(json_encode(self::TEST), $stub->jsonSerialize());
     }
 }

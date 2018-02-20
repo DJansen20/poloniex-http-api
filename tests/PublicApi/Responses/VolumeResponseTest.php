@@ -26,7 +26,6 @@ class VolumeResponseTest extends TestCase
 
     /**
      * @covers \Poloniex\PublicApi\Responses\VolumeResponse::__construct
-     * @covers \Poloniex\PublicApi\Responses\VolumeResponse::setCurrencyPairs
      * @return VolumeResponse
      */
     public function testCanBeConstructed(): VolumeResponse

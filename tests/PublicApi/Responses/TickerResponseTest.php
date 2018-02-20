@@ -42,7 +42,6 @@ class TickerResponseTest extends TestCase
 
     /**
      * @covers \Poloniex\PublicApi\Responses\TickerResponse::__construct
-     * @covers \Poloniex\PublicApi\Responses\TickerResponse::setCurrencyPairs
      * @return TickerResponse
      */
     public function testCanBeConstructed(): TickerResponse

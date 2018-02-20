@@ -37,7 +37,6 @@ class CurrenciesResponseTest extends TestCase
 
     /**
      * @covers \Poloniex\PublicApi\Responses\CurrenciesResponse::__construct
-     * @covers \Poloniex\PublicApi\Responses\CurrenciesResponse::setCurrencies
      * @return CurrenciesResponse
      */
     public function testCanBeConstructed(): CurrenciesResponse

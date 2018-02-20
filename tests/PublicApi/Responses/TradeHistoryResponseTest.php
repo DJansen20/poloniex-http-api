@@ -36,7 +36,6 @@ class TradeHistoryResponseTest extends TestCase
 
     /**
      * @covers \Poloniex\PublicApi\Responses\TradeHistoryResponse::__construct
-     * @covers \Poloniex\PublicApi\Responses\TradeHistoryResponse::setTradeHistory
      * @return TradeHistoryResponse
      */
     public function testCanBeConstructed(): TradeHistoryResponse

@@ -37,7 +37,6 @@ class ChartDataResponseTest extends TestCase
 
     /**
      * @covers \Poloniex\PublicApi\Responses\ChartDataResponse::__construct
-     * @covers \Poloniex\PublicApi\Responses\ChartDataResponse::setChartData
      * @return ChartDataResponse
      */
     public function testCanBeConstructed(): ChartDataResponse

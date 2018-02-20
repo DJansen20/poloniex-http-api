@@ -44,8 +44,6 @@ class LoanOrderResponseTest extends TestCase
 
     /**
      * @covers \Poloniex\PublicApi\Responses\LoanOrderResponse::__construct
-     * @covers \Poloniex\PublicApi\Responses\LoanOrderResponse::setOffers
-     * @covers \Poloniex\PublicApi\Responses\LoanOrderResponse::setDemands
      * @return LoanOrderResponse
      */
     public function testCanBeConstructed(): LoanOrderResponse
