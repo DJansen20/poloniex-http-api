@@ -179,6 +179,7 @@ The first parameter to the function has to be a currencypair, the second paramet
 You may set the currencyPair parameter to 'all' to get the data for all markets
 
 Each response has the following properties
+
 |Property       | Description                                   |
 |:--------------|:----------------------------------------------|
 |asks           |Current asks in the order book                 |                
@@ -241,6 +242,7 @@ array(4) {
 Returns the past 200 trades for a given market, or up to 50000 trades between a range specified in UNIX timestamps.
 
 Each response has the following properties
+
 |Property       | Description                                   |
 |:--------------|:----------------------------------------------|
 |globalTradeID  |Overal tradeID of all poloniex markets         |                
@@ -303,6 +305,7 @@ Returns candlestick chart data. Required parameters are "currencyPair", "period"
 "start", and "end". "Start" and "end" are given in UNIX timestamp format and used to specify the date range for the data returned.
 
 Each returned period has the following properties
+
 |Property       | Description                                       |
 |:--------------|:--------------------------------------------------|
 |date           |Date at which the candlestick started              |                
@@ -369,6 +372,7 @@ array(105) {
 Returns information about currencies.
 
 Each currency contains the following properties
+
 |Property       | Description                                       |
 |:--------------|:--------------------------------------------------|
 |id             |Poloniex internal ID                               |                
@@ -435,6 +439,7 @@ array(291) {
 Returns the list of loan offers and demands for a given currency.
 
 Each currency has the following properties.
+
 |Property       | Description                                       |
 |:--------------|:--------------------------------------------------|
 |rate           |Interest rate                                      |                
